@@ -34,19 +34,21 @@
 
     <section id="formulaire" class="formulaire">
         <h1 class="contact">Contact</h1>
-        <form action="" method="get">
-            <fieldset class="conteneur_nom-prenom-email">
-                <label class="label_nom" for="nom">nom</label>
-                <input class="input_nom" type="text" name="nom" id="nom" required>
-                <label class="label_prenom" for="prenom">prénom</label>
-                <input class="input_prenom" type="text" name="prenom" id="prenom" required>
-                <label class="label_email" for="email">email</label>
-                <input class="input_email" type="email" name="email" id="email" required>
-            </fieldset>
-            <fieldset class="conteneur_message">
-                <label class="label_message" for="message">message</label>
-                <textarea class="textarea_message" name="message" id="message" required></textarea>
-            </fieldset>
+        <form action="mailto:amignon@numericable.fr" method="post">
+            <div class="grid_formulaire">
+                <fieldset class="conteneur_nom-prenom-email">
+                    <label class="label_nom" for="nom">nom</label>
+                    <input class="input_nom" type="text" name="nom" id="nom" required>
+                    <label class="label_prenom" for="prenom">prénom</label>
+                    <input class="input_prenom" type="text" name="prenom" id="prenom" required>
+                    <label class="label_email" for="email">email</label>
+                    <input class="input_email" type="email" name="email" id="email" required>
+                </fieldset>
+                <fieldset class="conteneur_message">
+                    <label class="label_message" for="message">message</label>
+                    <textarea class="textarea_message" name="message" id="message" required></textarea>
+                </fieldset>
+            </div>
             <fieldset class="conteneur_envoyer">
                 <input type="submit" class="envoyer" value="ENVOYER">
             </fieldset>

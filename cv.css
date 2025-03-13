@@ -7,6 +7,8 @@
 
 main{
     margin: 15px;
+    margin-left: 100px;
+    margin-right: 100px;
 }
 
 
@@ -66,6 +68,7 @@ p{
 .image_cv{
     height: 30%;
     width: 30%;
+    margin-bottom: 50px;
 }
 
 .image_cv:hover{
@@ -103,20 +106,20 @@ p{
 }
 
 .image_logo_linkedin{
-    height: 50%;
-    width: 50%;
+    height: 25px;
+    width: 25px;
     margin-left: 50px;
 }
 
 .image_logo_github{
-    height: 30%;
-    width: 30%;
+    height: 30px;
+    width: 30px;
     margin-left: 30px;
 }
 
 .fleche_remontee_accueil{
-    height: 40%;
-    width: 40%;
+    height: 40px;
+    width: 33px;
 }
 
 footer nav{
@@ -129,6 +132,57 @@ footer{
     margin-top: 50px;
 }
 
+@media screen and (max-width: 996px) {/*pour rendre le site responsive*/
+    /*toutes pages*/
+    h1,h2{
+        font-size: 1.5em;
+   } 
+
+   .image_pattes_animaux_footer{
+        display: none;
+    }
+
+    .image_ordinateur_footer{
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1100px) {/*ne marche pas pour l'instant*/
+    nav .image_pattes_animaux, nav .image_ordinateur{
+        position: relative;
+        background: rgb(245, 245, 220, 1);
+        background-image: image(pattes_animaux);
+        background-image: image(image_ordinateur);
+    }
+}
+
+@media screen and (max-width: 600px) {
+    nav a{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            margin: auto;
+    }
+
+    .image_pattes_animaux{
+        display: none;
+    }
+    .image_ordinateur{
+        display: none;
+    }
+}
+
+@media screen and (max-width: 310px) {
+    nav{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    
+}
+
+
+
 /*partie index*/
 
 .image_photo_cv{
@@ -138,18 +192,12 @@ footer{
     margin: auto;
 }
 
-
-.section_CV{
-    text-align: center;
-    align-items: center;
-    margin-top: 80px;
-}
-
 .section_accroche{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     align-items: center;
     margin: auto;
+    margin-top: 65px;
     padding: 30px;
     border: 0.12em solid rgba(7, 7, 7, 0.932);
     gap: 30px;
@@ -161,21 +209,89 @@ footer{
     margin-bottom: 80px;
 }
 
+.section_CV{
+    text-align: center;
+    align-items: center;
+    margin-top: 80px;
+}
+
+@media screen and (max-width: 1400px){
+    .image_pattes_animaux_footer,.image_ordinateur_footer{
+        height: 20px;
+        width: 25px;
+    }
+}
+
+@media screen and (max-width: 1150px){
+    .image_pattes_animaux,.image_ordinateur{
+        height: 25px;
+        width: 30px;
+    }
+
+    footer img{
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+    }
+}
+
+@media screen and (max-width: 996px){
+    .section_accroche{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        margin-left: 60px;
+        margin-right: 60px;
+    }
+
+}
+
+@media screen and (max-width: 600px){
+    .section_accroche{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    main{
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+}
+
+@media screen and (max-width: 270px){
+    .section_accroche{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        margin-left: 10px;
+        margin-right: 10px;
+        border: none;
+    }
+
+    main{
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+}
+
 /*partie portfolio*/
 
 .portfolio{
-    margin-left: 30px;
-    margin-bottom: 50px;
+    margin-top: 100px;
+    margin-bottom: 70px;
     font-size: 3em;
     font-weight: 150;
     text-align: center;
 }
 
-h3{
+h3{/*titres de mes différents projets réalisés*/
    font-weight:200;
    font-size: 2em;
    margin-left: 10px;
-   margin-top: 50px;
+   margin-top: 70px;
    margin-bottom: 20px;
 }
 
@@ -186,7 +302,8 @@ h3{
     gap: 25px;
     width: 75%;
     margin: auto;
-    margin-top: 40px;
+    margin-top: 60px;
+    margin-bottom: 80px;
 }
 
 .grid_robbie img{
@@ -195,36 +312,67 @@ h3{
     object-fit: cover;
 }
 
+
+.lien_imageEtTexteHover{/*conteneur sous forme de lien qui contient l'image et le texte qui devra se hover par dessus l'image*/
+    position: relative;
+}
+
+.hover_voir_la_photo{/*définition du hover par dessus l'image mais application d'un none car ne doit pas s'afficher sans hover mais le texte est présent dans le html*/
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(50, 32, 48, 0.6);
+    display: none;
+}
+
+.lien_imageEtTexteHover:hover .hover_voir_la_photo{/*lorsque le conteneur sous forme de lien qui contient l'image et le texte sont hover, il faut maintenant afficher le texte comme designé plus haut (sauf que gelé en none à cet endroit), on dégèle le none ici*/
+    display: flex;
+}
+
+
 /*partie contact*/
 
 .conteneur_nom-prenom-email{
     display: grid;
-    grid-template-columns: 40% 60%;
+    grid-template-columns: 0.25fr 1fr;
     grid-template-rows: 1fr 1fr;
     gap: 10px;
     border: none;
     font-size: larger;
-    position: absolute;
-    margin-left: 350px;
 }
 
 .conteneur_message{
     display: grid;
-    grid-template-columns: 8% 25%;
+    grid-template-columns: 0.25fr 1fr;
     grid-template-rows: 1fr;
     gap: 10px;
     border: none;
     justify-content: center;
     font-size: larger;
-    margin-left: 450px;
 }
 
-textarea{
+textarea{/*les valeurs minimum des inputs du formulaire*/
     min-height: 88px;
+    min-width: 150px;
 }
 
-.nom,.prenom,.email{/*à refaire*/
-    min-width: 300px;
+.input_nom,.input_prenom,.input_email{/*les valeurs minimum et maximum des inputs du formulaire*/
+    min-width: 100px;
+    max-width: 200px;
+}
+
+.grid_formulaire{/*grid parent des 2 autres grid "message" et "nom/prenom/mail"*/
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    width: 70%;
+    align-items: center;
+    margin: auto;
 }
 
 .conteneur_envoyer{
@@ -261,4 +409,50 @@ margin-right: 45px;
 .formulaire{
     margin-top: 100px;
     margin-bottom: 130px;
+}
+
+@media screen and (max-width:996px) {
+    .grid_formulaire{
+        display: grid;
+        grid-template-rows: 1fr 2fr;
+        grid-template-columns: 1fr;
+        align-items: center;
+    }
+
+    .textarea_message{
+            min-height: 200px;
+            max-width: 200px;
+        }
+
+    main{
+        margin-left: 20%;
+        margin-right: 20%;
+    }
+
+    .conteneur_envoyer,.contact{
+        margin-right: 0;
+        
+    }
+    
+}
+
+@media screen and (max-width:830px) {
+    main{
+        margin-left: 15%;
+        margin-right: 15%;
+    }
+}
+
+@media screen and (max-width:750px) {
+    main{
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+}
+
+@media screen and (max-width:400px) {
+    main{
+        margin-left: 1%;
+        margin-right: 1%;
+    }
 }
