@@ -66,6 +66,20 @@ h2{
     padding: 10px;
     font-weight: 200;
 }
+
+.titre_cda{
+    font-size: 1.5em;
+}
+
+.reconversion{
+    font-size: 1em;
+    text-align: center;
+}
+
+
+.age{
+    font-size: 1.5em;
+}
  
 p{
     padding: 10px;
